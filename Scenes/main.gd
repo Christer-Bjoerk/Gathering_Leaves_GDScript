@@ -25,3 +25,6 @@ func _on_player_update_score():
 	# Updating total score
 	score += 1
 	$HUD.update_score(score)
+
+func _on_hud_game_over():
+	$ObstacleTimer.stop()
