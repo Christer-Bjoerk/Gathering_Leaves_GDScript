@@ -27,4 +27,5 @@ func _on_player_update_score():
 	$HUD.update_score(score)
 
 func _on_hud_game_over():
+	# Stop the game
 	$ObstacleTimer.stop()
