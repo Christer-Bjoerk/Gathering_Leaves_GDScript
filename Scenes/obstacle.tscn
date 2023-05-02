@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnh0lssk3dimv"]
+
+[ext_resource type="Texture2D" uid="uid://bgjlnqk713ft2" path="res://icon.svg" id="1_11mdx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_evmkt"]
+
+[node name="Obstacle" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 0.1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_evmkt")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_11mdx")

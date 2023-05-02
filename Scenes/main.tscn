@@ -1,7 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwqx4suc8kxgu"]
+[gd_scene load_steps=5 format=3 uid="uid://cwqx4suc8kxgu"]
 
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_1vsa8"]
 [ext_resource type="PackedScene" uid="uid://dfnkgugeprrw5" path="res://Scenes/player.tscn" id="1_ac6de"]
+[ext_resource type="PackedScene" uid="uid://bnh0lssk3dimv" path="res://Scenes/obstacle.tscn" id="2_5r0ki"]
+
+[sub_resource type="Curve2D" id="Curve2D_p3whg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1920, 0)
+}
+point_count = 2
 
 [node name="Main" type="Node"]
+script = ExtResource("1_1vsa8")
+obstacle_scene = ExtResource("2_5r0ki")
 
 [node name="Player" parent="." instance=ExtResource("1_ac6de")]
+
+[node name="ObstaclePath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_p3whg")
+
+[node name="ObstacleSpawnLocation" type="PathFollow2D" parent="ObstaclePath"]
+
+[node name="ObstacleTimer" type="Timer" parent="."]
+wait_time = 3.262
+autostart = true
+
+[connection signal="timeout" from="ObstacleTimer" to="." method="_on_obstacle_timer_timeout"]
