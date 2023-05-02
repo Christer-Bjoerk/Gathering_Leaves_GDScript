@@ -18,8 +18,10 @@ func _on_obstacle_timer_timeout():
 	
 	# Spawn obstacles
 	add_child(obstacle)
-
+	
+	obstacle.damage_player.connect($HUD.update_player_health.bind())
 
 func _on_player_update_score():
+	# Updating total score
 	score += 1
 	$HUD.update_score(score)
