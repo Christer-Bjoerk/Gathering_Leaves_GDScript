@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnh0lssk3dimv"]
+[gd_scene load_steps=4 format=3 uid="uid://bnh0lssk3dimv"]
 
 [ext_resource type="Texture2D" uid="uid://bgjlnqk713ft2" path="res://icon.svg" id="1_11mdx"]
+[ext_resource type="Script" path="res://Scripts/obstacle.gd" id="1_rmkji"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evmkt"]
 
 [node name="Obstacle" type="RigidBody2D"]
 collision_mask = 0
 gravity_scale = 0.1
+script = ExtResource("1_rmkji")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_evmkt")
@@ -15,3 +17,5 @@ shape = SubResource("RectangleShape2D_evmkt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_11mdx")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -22,7 +22,7 @@ curve = SubResource("Curve2D_p3whg")
 [node name="ObstacleSpawnLocation" type="PathFollow2D" parent="ObstaclePath"]
 
 [node name="ObstacleTimer" type="Timer" parent="."]
-wait_time = 3.262
+wait_time = 3.0
 autostart = true
 
 [connection signal="timeout" from="ObstacleTimer" to="." method="_on_obstacle_timer_timeout"]
