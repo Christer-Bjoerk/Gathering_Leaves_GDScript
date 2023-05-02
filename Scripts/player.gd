@@ -4,7 +4,7 @@ extends Area2D
 
 var screen_size
 
-signal hit
+signal updateScore
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -30,3 +30,4 @@ func _process(delta):
 func _on_body_entered(body):
 	# Collect items
 	body.queue_free()
+	updateScore.emit()

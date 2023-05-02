@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0gshq4ijbxp5"]
+
+[ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_3vr5m"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_3vr5m")
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 26.0
+grow_horizontal = 2
+text = "Hello"

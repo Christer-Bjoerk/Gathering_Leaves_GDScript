@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwqx4suc8kxgu"]
+[gd_scene load_steps=6 format=3 uid="uid://cwqx4suc8kxgu"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_1vsa8"]
 [ext_resource type="PackedScene" uid="uid://dfnkgugeprrw5" path="res://Scenes/player.tscn" id="1_ac6de"]
 [ext_resource type="PackedScene" uid="uid://bnh0lssk3dimv" path="res://Scenes/obstacle.tscn" id="2_5r0ki"]
+[ext_resource type="PackedScene" uid="uid://c0gshq4ijbxp5" path="res://Scenes/hud.tscn" id="4_lf1d7"]
 
 [sub_resource type="Curve2D" id="Curve2D_p3whg"]
 _data = {
@@ -25,4 +26,7 @@ curve = SubResource("Curve2D_p3whg")
 wait_time = 3.0
 autostart = true
 
+[node name="HUD" parent="." instance=ExtResource("4_lf1d7")]
+
+[connection signal="updateScore" from="Player" to="." method="_on_player_update_score"]
 [connection signal="timeout" from="ObstacleTimer" to="." method="_on_obstacle_timer_timeout"]

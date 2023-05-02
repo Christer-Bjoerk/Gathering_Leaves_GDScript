@@ -2,6 +2,8 @@ extends Node
 
 @export var obstacle_scene: PackedScene
 
+var score = 0
+
 func _on_obstacle_timer_timeout():
 	
 	# New instance of the Obstacle scene
@@ -16,3 +18,8 @@ func _on_obstacle_timer_timeout():
 	
 	# Spawn obstacles
 	add_child(obstacle)
+
+
+func _on_player_update_score():
+	score += 1
+	$HUD.update_score(score)
