@@ -4,6 +4,8 @@ extends Area2D
 
 var screen_size
 
+signal hit
+
 func _ready():
 	screen_size = get_viewport_rect().size
 
@@ -24,3 +26,7 @@ func _process(delta):
 	position += velocity * delta
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
+
+func _on_body_entered(body):
+	# Collect items
+	body.queue_free()
