@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evmkt"]
 size = Vector2(128, 128)
 
-[node name="Obstacle" type="RigidBody2D"]
+[node name="Obstacle" type="RigidBody2D" groups=["garbage"]]
 collision_mask = 0
 gravity_scale = 0.1
 script = ExtResource("1_rmkji")

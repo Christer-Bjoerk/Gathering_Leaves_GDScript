@@ -41,4 +41,9 @@ func in_game_hud(active):
 		$ScoreLabel.hide()
 		$PlayerHealthLabel.hide()
 		$Message.hide()
+
+func show_game_over():
+	show_message("Game Over")
+	await $MessageTimer.timeout
+	$PlayButton.show()
 	
