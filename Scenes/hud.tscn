@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0gshq4ijbxp5"]
+[gd_scene load_steps=3 format=3 uid="uid://c0gshq4ijbxp5"]
 
 [ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_3vr5m"]
+[ext_resource type="FontFile" uid="uid://b8dwb7vb3kvu2" path="res://Assets/Fonts/SunnyspellsRegular-MV9ze.otf" id="2_ywmhv"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_3vr5m")
@@ -9,17 +10,24 @@ script = ExtResource("1_3vr5m")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 26.0
+offset_left = -48.0
+offset_top = 40.0
+offset_right = 50.0
+offset_bottom = 95.0
 grow_horizontal = 2
-text = "Hello"
+theme_override_fonts/font = ExtResource("2_ywmhv")
+theme_override_font_sizes/font_size = 64
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PlayerHealthLabel" type="Label" parent="."]
-offset_left = 48.0
-offset_top = 8.0
-offset_right = 88.0
-offset_bottom = 34.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 192.0
+offset_bottom = 95.0
+theme_override_fonts/font = ExtResource("2_ywmhv")
+theme_override_font_sizes/font_size = 64
 text = "3"
 horizontal_alignment = 1
 
@@ -36,6 +44,8 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_ywmhv")
+theme_override_font_sizes/font_size = 64
 text = "Hello"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -52,6 +62,8 @@ offset_right = 80.0
 offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_ywmhv")
+theme_override_font_sizes/font_size = 65
 text = "Play Game"
 
 [node name="MessageTimer" type="Timer" parent="."]
