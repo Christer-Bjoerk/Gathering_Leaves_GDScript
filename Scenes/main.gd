@@ -4,6 +4,11 @@ extends Node
 
 var score = 0
 
+func new_game():
+	$HUD.show_message("Get Ready")
+	$HUD.in_game_hud(true)
+	$ObstacleTimer.start()
+
 func _on_obstacle_timer_timeout():
 	
 	# New instance of the Obstacle scene
@@ -29,3 +34,8 @@ func _on_player_update_score():
 func _on_hud_game_over():
 	# Stop the game
 	$ObstacleTimer.stop()
+	$HUD.show_message("Game Over")
+
+
+func _on_hud_start_game():
+	new_game()
