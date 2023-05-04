@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cwqx4suc8kxgu"]
+[gd_scene load_steps=7 format=3 uid="uid://3u6aejj3rrs"]
 
-[ext_resource type="Script" path="res://Scenes/main.gd" id="1_1vsa8"]
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_6c2qd"]
 [ext_resource type="PackedScene" uid="uid://dfnkgugeprrw5" path="res://Scenes/player.tscn" id="1_ac6de"]
 [ext_resource type="PackedScene" uid="uid://bnh0lssk3dimv" path="res://Scenes/obstacle.tscn" id="2_5r0ki"]
 [ext_resource type="PackedScene" uid="uid://c0gshq4ijbxp5" path="res://Scenes/hud.tscn" id="4_lf1d7"]
@@ -13,7 +13,7 @@ _data = {
 point_count = 2
 
 [node name="Main" type="Node"]
-script = ExtResource("1_1vsa8")
+script = ExtResource("1_6c2qd")
 obstacle_scene = ExtResource("2_5r0ki")
 
 [node name="Player" parent="." instance=ExtResource("1_ac6de")]

@@ -21,6 +21,13 @@ func _process(delta):
 	
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
+		$AnimatedSprite2D.play("Walk")
+	else:
+		$AnimatedSprite2D.play("Idle")
+	
+	if velocity.x != 0:
+		$AnimatedSprite2D.animation = "Walk"
+		$AnimatedSprite2D.flip_h = velocity.x < 0
 	
 	# Prevent the player from leaving the screen
 	position += velocity * delta
