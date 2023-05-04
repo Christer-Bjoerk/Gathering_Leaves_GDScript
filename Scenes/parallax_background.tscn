@@ -21,7 +21,7 @@ texture = ExtResource("2_ektcq")
 
 [node name="FarTrees" type="ParallaxLayer" parent="."]
 texture_repeat = 2
-motion_scale = Vector2(0.2, 0.2)
+motion_scale = Vector2(0.3, 0.3)
 motion_mirroring = Vector2(1920, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="FarTrees"]
@@ -41,7 +41,6 @@ texture = ExtResource("4_waax7")
 
 [node name="CloseTrees" type="ParallaxLayer" parent="."]
 texture_repeat = 2
-motion_scale = Vector2(0.3, 0.3)
 motion_mirroring = Vector2(1920, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="CloseTrees"]
