@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckijso6rij2mg"]
+
+[ext_resource type="Script" path="res://Scripts/pauseMenu.gd" id="1_0svkc"]
+[ext_resource type="FontFile" uid="uid://b8dwb7vb3kvu2" path="res://Assets/Fonts/SunnyspellsRegular-MV9ze.otf" id="1_5pt3m"]
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0svkc")
+
+[node name="PauseButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -48.0
+offset_right = 117.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_5pt3m")
+theme_override_font_sizes/font_size = 65
+text = "Pause"
+
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]

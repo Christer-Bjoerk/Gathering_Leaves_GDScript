@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://3u6aejj3rrs"]
+[gd_scene load_steps=8 format=3 uid="uid://b8dcbruuaxth2"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_6c2qd"]
 [ext_resource type="PackedScene" uid="uid://dfnkgugeprrw5" path="res://Scenes/player.tscn" id="1_ac6de"]
 [ext_resource type="PackedScene" uid="uid://bnh0lssk3dimv" path="res://Scenes/obstacle.tscn" id="2_5r0ki"]
 [ext_resource type="PackedScene" uid="uid://c0gshq4ijbxp5" path="res://Scenes/hud.tscn" id="4_lf1d7"]
 [ext_resource type="PackedScene" uid="uid://f7uy1i17aeda" path="res://Scenes/parallax_background.tscn" id="5_yennm"]
+[ext_resource type="PackedScene" uid="uid://ckijso6rij2mg" path="res://Scenes/pauseMenu.tscn" id="6_li1gp"]
 
 [sub_resource type="Curve2D" id="Curve2D_p3whg"]
 _data = {
@@ -15,6 +16,8 @@ point_count = 2
 [node name="Main" type="Node"]
 script = ExtResource("1_6c2qd")
 obstacle_scene = ExtResource("2_5r0ki")
+
+[node name="PauseMenu" parent="." instance=ExtResource("6_li1gp")]
 
 [node name="Player" parent="." instance=ExtResource("1_ac6de")]
 
