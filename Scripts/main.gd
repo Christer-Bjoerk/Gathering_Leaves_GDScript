@@ -8,6 +8,7 @@ func new_game():
 	$HUD.in_game_hud(true)
 	$HUD.show_message("Get Ready")
 	$ObstacleTimer.start()
+	
 
 func _on_obstacle_timer_timeout():
 	
@@ -35,6 +36,7 @@ func _on_hud_game_over():
 	# Stop the game
 	$ObstacleTimer.stop()
 	$HUD.show_game_over()
+	$PauseMenu.can_pause_game = false
 	
 	# Delete the remaining obstacles
 	# to prevent Game Over message from displaying more than once
@@ -42,3 +44,4 @@ func _on_hud_game_over():
 	
 func _on_hud_start_game():
 	new_game()
+	$PauseMenu.can_pause_game = true
