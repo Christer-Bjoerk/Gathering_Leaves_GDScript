@@ -26,11 +26,9 @@ func _on_message_timer_timeout():
 func in_game_hud(active):
 	if active:
 		$ScoreLabel.show()
-		$PlayerHealthLabel.show()
 		$Message.show()
 	elif !active:
 		$ScoreLabel.hide()
-		$PlayerHealthLabel.hide()
 		$Message.hide()
 
 func show_game_over():
