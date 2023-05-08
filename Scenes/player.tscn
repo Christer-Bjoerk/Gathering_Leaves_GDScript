@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://dfnkgugeprrw5"]
+[gd_scene load_steps=16 format=3 uid="uid://dfnkgugeprrw5"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_mbqjk"]
+[ext_resource type="AudioStream" uid="uid://b4ttl2osg1qhr" path="res://Assets/Audio/Collecting Leaves.wav" id="3_26nmc"]
 [ext_resource type="Texture2D" uid="uid://d16ym8dn0mjv8" path="res://Assets/Art/AnimationSheet_Character.png" id="3_p4plv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fablc"]
@@ -106,5 +107,8 @@ speed_scale = 0.5
 visible = false
 position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_5thkn")
+
+[node name="SFX Player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_26nmc")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

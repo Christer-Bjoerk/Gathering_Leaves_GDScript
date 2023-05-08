@@ -41,6 +41,7 @@ func _on_body_entered(body):
 	# Collect items
 	body.queue_free()
 	updateScore.emit()
+	$"SFX Player".play()
 
 func update_player_colour():
 	player_health -= 1
