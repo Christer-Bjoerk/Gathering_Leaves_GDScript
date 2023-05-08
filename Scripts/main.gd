@@ -8,7 +8,6 @@ func new_game():
 	$HUD.in_game_hud(true)
 	$HUD.show_message("Get Ready")
 	$ObstacleTimer.start()
-	
 
 func _on_obstacle_timer_timeout():
 	
@@ -26,6 +25,7 @@ func _on_obstacle_timer_timeout():
 	add_child(obstacle)
 	
 	obstacle.damage_player.connect($HUD.update_player_health.bind())
+	obstacle.damage_player.connect($Player.update_player_colour.bind())
 
 func _on_player_update_score():
 	# Updating total score
@@ -45,3 +45,4 @@ func _on_hud_game_over():
 func _on_hud_start_game():
 	new_game()
 	$PauseMenu.can_pause_game = true
+	$Player.modulate.a8 = 255

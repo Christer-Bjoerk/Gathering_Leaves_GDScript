@@ -4,6 +4,7 @@ var playerHealth = 3
 
 signal start_game
 signal game_over
+signal update_player_sprite
 
 func _ready():
 	in_game_hud(false)
@@ -13,6 +14,8 @@ func update_score(score):
 
 func update_player_health():
 	playerHealth -=1
+	
+	update_player_sprite.emit()
 	
 	if playerHealth <= 0:
 		playerHealth = 0

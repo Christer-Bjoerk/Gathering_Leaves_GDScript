@@ -4,6 +4,8 @@ extends Area2D
 
 var screen_size
 
+var player_health = 3
+
 signal updateScore
 
 func _ready():
@@ -38,3 +40,16 @@ func _on_body_entered(body):
 	# Collect items
 	body.queue_free()
 	updateScore.emit()
+
+func update_player_colour():
+	player_health -= 1
+	
+	# Changes the player's health
+	if(player_health == 3):
+		modulate.a8 = 255
+	elif (player_health == 2):
+		modulate.a8 = 150
+	elif (player_health == 1):
+		modulate.a8 = 100
+	elif (player_health == 0):
+		modulate.a8 = 0
