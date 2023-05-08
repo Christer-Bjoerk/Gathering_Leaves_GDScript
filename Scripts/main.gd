@@ -24,15 +24,20 @@ func _on_obstacle_timer_timeout():
 	# Spawn obstacles
 	add_child(obstacle)
 	
-	obstacle.damage_player.connect($HUD.update_player_health.bind())
 	obstacle.damage_player.connect($Player.update_player_colour.bind())
 
 func _on_player_update_score():
 	# Updating total score
 	score += 1
 	$HUD.update_score(score)
+	
+func _on_hud_start_game():
+	new_game()
+	$PauseMenu.can_pause_game = true
+	$Player.modulate.a8 = 255
 
-func _on_hud_game_over():
+
+func _on_player_game_over():
 	# Stop the game
 	$ObstacleTimer.stop()
 	$HUD.show_game_over()
@@ -41,8 +46,3 @@ func _on_hud_game_over():
 	# Delete the remaining obstacles
 	# to prevent Game Over message from displaying more than once
 	get_tree().call_group("garbage", "queue_free")
-	
-func _on_hud_start_game():
-	new_game()
-	$PauseMenu.can_pause_game = true
-	$Player.modulate.a8 = 255

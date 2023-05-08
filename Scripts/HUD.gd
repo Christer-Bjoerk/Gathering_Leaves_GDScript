@@ -3,7 +3,6 @@ extends CanvasLayer
 var playerHealth = 3
 
 signal start_game
-signal game_over
 signal update_player_sprite
 
 func _ready():
@@ -11,17 +10,6 @@ func _ready():
 
 func update_score(score):
 	$ScoreLabel.text = str(score)
-
-func update_player_health():
-	playerHealth -=1
-	
-	update_player_sprite.emit()
-	
-	if playerHealth <= 0:
-		playerHealth = 0
-		game_over.emit()
-	
-	$PlayerHealthLabel.text = str(playerHealth)
 	
 func _on_play_button_pressed():
 	$PlayButton.hide()

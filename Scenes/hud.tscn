@@ -21,16 +21,6 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlayerHealthLabel" type="Label" parent="."]
-offset_left = 40.0
-offset_top = 40.0
-offset_right = 192.0
-offset_bottom = 95.0
-theme_override_fonts/font = ExtResource("2_ywmhv")
-theme_override_font_sizes/font_size = 64
-text = "3"
-horizontal_alignment = 1
-
 [node name="Message" type="Label" parent="."]
 anchors_preset = 8
 anchor_left = 0.5

@@ -7,6 +7,7 @@ var screen_size
 var player_health = 3
 
 signal updateScore
+signal game_over
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -53,3 +54,4 @@ func update_player_colour():
 		modulate.a8 = 100
 	elif (player_health == 0):
 		modulate.a8 = 0
+		game_over.emit()
