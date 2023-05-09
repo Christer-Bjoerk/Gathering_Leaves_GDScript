@@ -12,7 +12,7 @@ func update_score(score):
 	$ScoreLabel.text = str(score)
 	
 func _on_play_button_pressed():
-	$PlayButton.hide()
+	$StartMenu.hide()
 	start_game.emit()
 	
 func show_message(text):
@@ -35,4 +35,16 @@ func show_game_over():
 	show_message("Game Over")
 	await $MessageTimer.timeout
 	$PlayButton.show()
-	
+
+func _on_credits_button_pressed():
+	$StartMenu.hide()
+	$Credits.show()
+
+
+func _on_return_button_pressed():
+	$Credits.hide()
+	$StartMenu.show()
+
+
+func _on_quit_button_pressed():
+	get_tree().quit()
