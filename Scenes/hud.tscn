@@ -139,6 +139,7 @@ theme_override_constants/separation = 5
 [node name="Label" type="Label" parent="Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_rw7wq")
+theme_override_colors/font_color = Color(0.854902, 0.454902, 0.164706, 1)
 text = "Programmer & Designer"
 horizontal_alignment = 1
 
@@ -152,6 +153,7 @@ horizontal_alignment = 1
 [node name="Label2" type="Label" parent="Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_rw7wq")
+theme_override_colors/font_color = Color(0.854494, 0.454924, 0.166397, 1)
 text = "Audio"
 horizontal_alignment = 1
 
@@ -166,6 +168,7 @@ horizontal_alignment = 1
 [node name="Label3" type="Label" parent="Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_rw7wq")
+theme_override_colors/font_color = Color(0.854494, 0.454924, 0.166397, 1)
 text = "Art"
 horizontal_alignment = 1
 
