@@ -1,6 +1,8 @@
 extends Area2D
 
 @export var speed = 400;
+@export var collect_leaves: AudioStream
+@export var damaged: AudioStream
 
 var screen_size
 
@@ -41,12 +43,17 @@ func _on_body_entered(body):
 	# Collect items
 	body.queue_free()
 	updateScore.emit()
+	$"SFX Player".stream = collect_leaves
 	$"SFX Player".play()
 
 func update_player_colour():
 	player_health -= 1
 	
-	# Changes the player's health
+	$"SFX Player".stream = damaged
+	$"SFX Player".play()
+	
+	# Player sprite becomes more transparent
+	# the less health the player has
 	if(player_health == 3):
 		modulate.a8 = 255
 	elif (player_health == 2):

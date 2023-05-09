@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://6l5415r4rpib"
+path="res://.godot/imported/Crushed leaves.mp3-d5189a0b6bf5b1e08c260974057c33d9.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Crushed leaves.mp3"
+dest_files=["res://.godot/imported/Crushed leaves.mp3-d5189a0b6bf5b1e08c260974057c33d9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
