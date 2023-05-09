@@ -1,29 +1,31 @@
 [gd_scene load_steps=3 format=3 uid="uid://ckijso6rij2mg"]
 
 [ext_resource type="Script" path="res://Scripts/pauseMenu.gd" id="1_0svkc"]
-[ext_resource type="FontFile" uid="uid://b8dwb7vb3kvu2" path="res://Assets/Fonts/SunnyspellsRegular-MV9ze.otf" id="1_5pt3m"]
+[ext_resource type="Theme" uid="uid://xjd0j83fhynn" path="res://Assets/Fonts/hud pixelstyle.theme" id="2_k6402"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
-visible = false
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0svkc")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.5
+offset_top = -110.5
+offset_right = 128.5
+offset_bottom = 110.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
 layout_mode = 2
@@ -40,20 +42,20 @@ layout_mode = 2
 
 [node name="PauseButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_5pt3m")
-theme_override_font_sizes/font_size = 65
+theme = ExtResource("2_k6402")
+theme_override_font_sizes/font_size = 32
 text = "Resume"
 
 [node name="MainMenuButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_5pt3m")
-theme_override_font_sizes/font_size = 65
+theme = ExtResource("2_k6402")
+theme_override_font_sizes/font_size = 32
 text = "Main Menu"
 
 [node name="QuitGameButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_5pt3m")
-theme_override_font_sizes/font_size = 65
+theme = ExtResource("2_k6402")
+theme_override_font_sizes/font_size = 32
 text = "Quit Game"
 
 [connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/PauseButton" to="." method="_on_pause_button_pressed"]

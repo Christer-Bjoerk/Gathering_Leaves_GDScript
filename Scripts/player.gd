@@ -43,6 +43,7 @@ func _on_body_entered(body):
 	# Collect items
 	body.queue_free()
 	updateScore.emit()
+	
 	$"SFX Player".stream = collect_leaves
 	$"SFX Player".play()
 

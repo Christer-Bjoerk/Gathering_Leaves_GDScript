@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c0gshq4ijbxp5"]
 
 [ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_3vr5m"]
-[ext_resource type="FontFile" uid="uid://b8dwb7vb3kvu2" path="res://Assets/Fonts/SunnyspellsRegular-MV9ze.otf" id="2_ywmhv"]
+[ext_resource type="Theme" uid="uid://xjd0j83fhynn" path="res://Assets/Fonts/hud pixelstyle.theme" id="2_rw7wq"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_3vr5m")
@@ -15,13 +15,13 @@ offset_top = 40.0
 offset_right = 50.0
 offset_bottom = 95.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_ywmhv")
-theme_override_font_sizes/font_size = 64
+theme = ExtResource("2_rw7wq")
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Message" type="Label" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -34,8 +34,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("2_ywmhv")
-theme_override_font_sizes/font_size = 64
+theme = ExtResource("2_rw7wq")
 text = "Hello"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -50,6 +49,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_rw7wq")
 color = Color(1, 1, 1, 0)
 
 [node name="CenterContainer" type="CenterContainer" parent="StartMenu"]
@@ -76,34 +76,32 @@ layout_mode = 2
 
 [node name="Title" type="Label" parent="StartMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_ywmhv")
-theme_override_font_sizes/font_size = 128
+theme = ExtResource("2_rw7wq")
+theme_override_font_sizes/font_size = 64
 text = "Rain Fall"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="StartMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_rw7wq")
 
 [node name="PlayButton" type="Button" parent="StartMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("2_ywmhv")
-theme_override_font_sizes/font_size = 65
+theme = ExtResource("2_rw7wq")
 text = "Play Game"
 
 [node name="CreditsButton" type="Button" parent="StartMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("2_ywmhv")
-theme_override_font_sizes/font_size = 65
+theme = ExtResource("2_rw7wq")
 text = "Credits"
 
 [node name="QuitButton" type="Button" parent="StartMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("2_ywmhv")
-theme_override_font_sizes/font_size = 65
+theme = ExtResource("2_rw7wq")
 text = "Quit Game"
 
 [node name="Credits" type="ColorRect" parent="."]
@@ -140,44 +138,41 @@ theme_override_constants/separation = 5
 
 [node name="Label" type="Label" parent="Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_ywmhv")
-theme_override_font_sizes/font_size = 64
+theme = ExtResource("2_rw7wq")
 text = "Programmer & Designer"
 horizontal_alignment = 1
 
 [node name="Name" type="Label" parent="Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_ywmhv")
-theme_override_font_sizes/font_size = 32
+theme = ExtResource("2_rw7wq")
+theme_override_font_sizes/font_size = 20
 text = "Chris Bjoerk"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_ywmhv")
-theme_override_font_sizes/font_size = 64
+theme = ExtResource("2_rw7wq")
 text = "Audio"
 horizontal_alignment = 1
 
 [node name="Name2" type="Label" parent="Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_ywmhv")
-theme_override_font_sizes/font_size = 32
+theme = ExtResource("2_rw7wq")
+theme_override_font_sizes/font_size = 20
 text = "LordFrodo10
 Purrple Cat"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_ywmhv")
-theme_override_font_sizes/font_size = 64
+theme = ExtResource("2_rw7wq")
 text = "Art"
 horizontal_alignment = 1
 
 [node name="Name3" type="Label" parent="Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_ywmhv")
-theme_override_font_sizes/font_size = 32
+theme = ExtResource("2_rw7wq")
+theme_override_font_sizes/font_size = 20
 text = "Aethrall
 Penzilla"
 horizontal_alignment = 1
@@ -190,8 +185,8 @@ anchor_bottom = 1.0
 offset_top = -56.0
 offset_right = 128.0
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("2_ywmhv")
-theme_override_font_sizes/font_size = 32
+theme = ExtResource("2_rw7wq")
+theme_override_font_sizes/font_size = 20
 text = "Return"
 
 [connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
