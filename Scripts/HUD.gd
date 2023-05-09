@@ -34,17 +34,15 @@ func in_game_hud(active):
 func show_game_over():
 	show_message("Game Over")
 	await $MessageTimer.timeout
-	$PlayButton.show()
+	$StartMenu.show()
 
 func _on_credits_button_pressed():
 	$StartMenu.hide()
 	$Credits.show()
 
-
 func _on_return_button_pressed():
 	$Credits.hide()
 	$StartMenu.show()
-
 
 func _on_quit_button_pressed():
 	get_tree().quit()

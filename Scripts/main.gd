@@ -46,3 +46,14 @@ func _on_player_game_over():
 	# Delete the remaining obstacles
 	# to prevent Game Over message from displaying more than once
 	get_tree().call_group("garbage", "queue_free")
+
+
+func _on_pause_menu_main_menu():
+	$ObstacleTimer.stop()
+	$PauseMenu.can_pause_game = false
+	$PauseMenu.hide()
+	$HUD/StartMenu.show()
+	
+	# Delete the remaining obstacles
+	# to prevent Game Over message from displaying more than once
+	get_tree().call_group("garbage", "queue_free")
