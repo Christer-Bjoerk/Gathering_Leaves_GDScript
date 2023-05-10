@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0gshq4ijbxp5"]
+[gd_scene load_steps=4 format=3 uid="uid://c0gshq4ijbxp5"]
 
 [ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_3vr5m"]
 [ext_resource type="Theme" uid="uid://xjd0j83fhynn" path="res://Assets/Fonts/hud pixelstyle.theme" id="2_rw7wq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7dqh"]
+bg_color = Color(0.854902, 0.454902, 0.164706, 1)
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_3vr5m")
@@ -77,8 +80,9 @@ layout_mode = 2
 [node name="Title" type="Label" parent="StartMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_rw7wq")
+theme_override_colors/font_color = Color(0.854494, 0.454924, 0.166397, 1)
 theme_override_font_sizes/font_size = 64
-text = "Rain Fall"
+text = "Gathering Leaves"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -92,17 +96,17 @@ size_flags_vertical = 3
 theme = ExtResource("2_rw7wq")
 text = "Play Game"
 
+[node name="SettingsButton" type="Button" parent="StartMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_rw7wq")
+text = "Settings"
+
 [node name="CreditsButton" type="Button" parent="StartMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_rw7wq")
 text = "Credits"
-
-[node name="QuitButton" type="Button" parent="StartMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme = ExtResource("2_rw7wq")
-text = "Quit Game"
 
 [node name="Credits" type="ColorRect" parent="."]
 visible = false
@@ -140,7 +144,8 @@ theme_override_constants/separation = 5
 layout_mode = 2
 theme = ExtResource("2_rw7wq")
 theme_override_colors/font_color = Color(0.854902, 0.454902, 0.164706, 1)
-text = "Programmer & Designer"
+text = "Programmer, Designer, 
+Art & UI"
 horizontal_alignment = 1
 
 [node name="Name" type="Label" parent="Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
@@ -192,8 +197,88 @@ theme = ExtResource("2_rw7wq")
 theme_override_font_sizes/font_size = 20
 text = "Return"
 
+[node name="SettingsMenu" type="ColorRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(960, 500)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -250.0
+offset_right = 480.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="SettingsTabContainer" type="TabContainer" parent="SettingsMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_rw7wq")
+theme_override_constants/side_margin = -1
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_i7dqh")
+
+[node name="Setting" type="TabBar" parent="SettingsMenu/SettingsTabContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsMenu/SettingsTabContainer/Setting"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="GridContainer" type="GridContainer" parent="SettingsMenu/SettingsTabContainer/Setting/MarginContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="Master Volume" type="Label" parent="SettingsMenu/SettingsTabContainer/Setting/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsMenu/SettingsTabContainer/Setting/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+
+[node name="MasterVolumeSlider" type="HSlider" parent="SettingsMenu/SettingsTabContainer/Setting/MarginContainer/GridContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
+min_value = -50.0
+max_value = 0.0
+value = -20.0
+
+[node name="ReturnButtonSettings" type="Button" parent="SettingsMenu"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -480.0
+offset_top = 234.0
+offset_right = -352.0
+offset_bottom = 290.0
+grow_vertical = 0
+theme = ExtResource("2_rw7wq")
+theme_override_font_sizes/font_size = 20
+text = "Return"
+
 [connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
 [connection signal="pressed" from="StartMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="StartMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="StartMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="StartMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Credits/ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="value_changed" from="SettingsMenu/SettingsTabContainer/Setting/MarginContainer/GridContainer/HBoxContainer/MasterVolumeSlider" to="." method="_on_master_volume_slider_value_changed"]
+[connection signal="pressed" from="SettingsMenu/ReturnButtonSettings" to="." method="_on_return_button_settings_pressed"]

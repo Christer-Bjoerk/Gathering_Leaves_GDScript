@@ -44,5 +44,14 @@ func _on_return_button_pressed():
 	$Credits.hide()
 	$StartMenu.show()
 
-func _on_quit_button_pressed():
-	get_tree().quit()
+func _on_master_volume_slider_value_changed(value):
+	pass # Replace with function body.
+
+
+func _on_return_button_settings_pressed():
+	$SettingsMenu.hide()
+	$StartMenu.show()
+	
+func _on_settings_button_pressed():
+	$StartMenu.hide()
+	$SettingsMenu.show()
