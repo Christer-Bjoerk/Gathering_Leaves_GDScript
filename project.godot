@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 MusicPlayer="*res://Scenes/music_player.tscn"
+GlobalSettings="*res://Scripts/global_settings.gd"
+Save="*res://Scripts/save.gd"
 
 [display]
 

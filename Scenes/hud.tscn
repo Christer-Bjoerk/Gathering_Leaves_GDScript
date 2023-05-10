@@ -259,7 +259,7 @@ size_flags_horizontal = 10
 size_flags_vertical = 1
 min_value = -50.0
 max_value = 0.0
-value = -20.0
+value = -10.0
 
 [node name="ReturnButtonSettings" type="Button" parent="SettingsMenu"]
 layout_mode = 1

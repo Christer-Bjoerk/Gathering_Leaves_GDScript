@@ -5,8 +5,12 @@ var playerHealth = 3
 signal start_game
 signal update_player_sprite
 
+# Audio Settings
+@onready var master_volume_slider = $SettingsMenu/SettingsTabContainer/Setting/MarginContainer/GridContainer/HBoxContainer/MasterVolumeSlider
+
 func _ready():
 	in_game_hud(false)
+	master_volume_slider.value = Save.game_data.master_volume
 
 func update_score(score):
 	$ScoreLabel.text = str(score)
@@ -45,7 +49,7 @@ func _on_return_button_pressed():
 	$StartMenu.show()
 
 func _on_master_volume_slider_value_changed(value):
-	pass # Replace with function body.
+	GlobalSettings.update_master_volume(value)
 
 
 func _on_return_button_settings_pressed():
