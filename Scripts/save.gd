@@ -13,8 +13,9 @@ func load_data():
 	
 	if file == null:
 		game_data = {
-			"master_volume": - 10
-		}
+			"master_volume": - 10,
+			"sfx_volume": - 10
+			}
 		save_data()
 	else:
 		file.open(SAVEFILE,FileAccess.READ)

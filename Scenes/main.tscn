@@ -9,7 +9,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_p3whg"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1920, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 52, 1, 0, 0, 0, 0, 1868.71, 1)
 }
 point_count = 2
 
@@ -23,12 +23,15 @@ visible = false
 [node name="Player" parent="." instance=ExtResource("1_ac6de")]
 
 [node name="ObstaclePath" type="Path2D" parent="."]
+position = Vector2(-23.6667, 0)
+scale = Vector2(1.01282, 1)
 curve = SubResource("Curve2D_p3whg")
 
 [node name="ObstacleSpawnLocation" type="PathFollow2D" parent="ObstaclePath"]
+position = Vector2(52, 1)
 
 [node name="ObstacleTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
 
 [node name="HUD" parent="." instance=ExtResource("4_lf1d7")]
 

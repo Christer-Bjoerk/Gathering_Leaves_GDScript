@@ -241,18 +241,37 @@ theme_override_constants/margin_bottom = 25
 
 [node name="GridContainer" type="GridContainer" parent="SettingsMenu/SettingsTabContainer/Setting/MarginContainer"]
 layout_mode = 2
+theme_override_constants/v_separation = 30
 columns = 2
 
-[node name="Master Volume" type="Label" parent="SettingsMenu/SettingsTabContainer/Setting/MarginContainer/GridContainer"]
+[node name="MasterVolume" type="Label" parent="SettingsMenu/SettingsTabContainer/Setting/MarginContainer/GridContainer"]
 layout_mode = 2
 text = "Master Volume"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="SettingsMenu/SettingsTabContainer/Setting/MarginContainer/GridContainer"]
+[node name="MasterVolumeSlider" type="HBoxContainer" parent="SettingsMenu/SettingsTabContainer/Setting/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
 
-[node name="MasterVolumeSlider" type="HSlider" parent="SettingsMenu/SettingsTabContainer/Setting/MarginContainer/GridContainer/HBoxContainer"]
+[node name="MasterVolumeSlider" type="HSlider" parent="SettingsMenu/SettingsTabContainer/Setting/MarginContainer/GridContainer/MasterVolumeSlider"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
+min_value = -50.0
+max_value = 0.0
+value = -10.0
+
+[node name="SFXVolumeSlider2" type="Label" parent="SettingsMenu/SettingsTabContainer/Setting/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "SFX Volume"
+
+[node name="SFXVolumeSlider" type="HBoxContainer" parent="SettingsMenu/SettingsTabContainer/Setting/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+
+[node name="SFXVolumeSlider" type="HSlider" parent="SettingsMenu/SettingsTabContainer/Setting/MarginContainer/GridContainer/SFXVolumeSlider"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 10
@@ -280,5 +299,6 @@ text = "Return"
 [connection signal="pressed" from="StartMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="StartMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="Credits/ReturnButton" to="." method="_on_return_button_pressed"]
-[connection signal="value_changed" from="SettingsMenu/SettingsTabContainer/Setting/MarginContainer/GridContainer/HBoxContainer/MasterVolumeSlider" to="." method="_on_master_volume_slider_value_changed"]
+[connection signal="value_changed" from="SettingsMenu/SettingsTabContainer/Setting/MarginContainer/GridContainer/MasterVolumeSlider/MasterVolumeSlider" to="." method="_on_master_volume_slider_value_changed"]
+[connection signal="value_changed" from="SettingsMenu/SettingsTabContainer/Setting/MarginContainer/GridContainer/SFXVolumeSlider/SFXVolumeSlider" to="." method="_on_sfx_volume_slider_value_changed"]
 [connection signal="pressed" from="SettingsMenu/ReturnButtonSettings" to="." method="_on_return_button_settings_pressed"]

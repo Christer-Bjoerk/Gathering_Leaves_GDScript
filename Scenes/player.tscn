@@ -112,5 +112,6 @@ position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_5thkn")
 
 [node name="SFX Player" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
