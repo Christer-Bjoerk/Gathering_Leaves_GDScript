@@ -9,6 +9,8 @@ func new_game():
 	$HUD.show_message("Get Ready")
 	$ObstacleTimer.start()
 	$Player.player_health = 3
+	score = 0
+	$HUD.update_score(score)
 
 func _on_obstacle_timer_timeout():
 	
@@ -54,7 +56,6 @@ func _on_pause_menu_main_menu():
 
 func destroy_objects(group:String,function:String):
 	get_tree().call_group(group,function)
-
 
 func _on_player_update_health():
 	# Updating total score
