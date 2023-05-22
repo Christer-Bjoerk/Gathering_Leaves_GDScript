@@ -40,6 +40,6 @@ wait_time = 2.0
 [connection signal="game_mode" from="PauseMenu" to="." method="_on_pause_menu_game_mode"]
 [connection signal="main_menu" from="PauseMenu" to="." method="_on_pause_menu_main_menu"]
 [connection signal="game_over" from="Player" to="." method="_on_player_game_over"]
-[connection signal="updateScore" from="Player" to="." method="_on_player_update_score"]
+[connection signal="updateHealth" from="Player" to="." method="_on_player_update_health"]
 [connection signal="timeout" from="ObstacleTimer" to="." method="_on_obstacle_timer_timeout"]
 [connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
