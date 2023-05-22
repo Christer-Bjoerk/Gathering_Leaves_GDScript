@@ -61,6 +61,5 @@ func _on_settings_button_pressed():
 	$StartMenu.hide()
 	$SettingsMenu.show()
 
-
 func _on_sfx_volume_slider_value_changed(value):
 	GlobalSettings.update_sfx_volume(value)

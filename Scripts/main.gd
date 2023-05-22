@@ -8,6 +8,7 @@ func new_game():
 	$HUD.in_game_hud(true)
 	$HUD.show_message("Get Ready")
 	$ObstacleTimer.start()
+	$Player.player_health = 3
 
 func _on_obstacle_timer_timeout():
 	
@@ -45,8 +46,9 @@ func _on_player_game_over():
 	
 	# Delete the remaining obstacles
 	# to prevent Game Over message from displaying more than once
-	get_tree().call_group("garbage", "queue_free")
+	#get_tree().call_group("garbage", "queue_free")
 
+	destroy_objects("garbage", "queue_free")
 
 func _on_pause_menu_main_menu():
 	$ObstacleTimer.stop()
@@ -56,4 +58,9 @@ func _on_pause_menu_main_menu():
 	
 	# Delete the remaining obstacles
 	# to prevent Game Over message from displaying more than once
-	get_tree().call_group("garbage", "queue_free")
+	#get_tree().call_group("garbage", "queue_free")
+	
+	destroy_objects("garbage", "queue_free")
+
+func destroy_objects(group:String,function:String):
+	get_tree().call_group(group,function)
