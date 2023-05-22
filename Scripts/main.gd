@@ -5,12 +5,7 @@ extends Node
 var score = 0
 
 func new_game():
-	$HUD.in_game_hud(true)
-	$HUD.show_message("Get Ready")
-	$ObstacleTimer.start()
-	$Player.player_health = 3
-	score = 0
-	$HUD.update_score(score)
+	default_game()
 
 func _on_obstacle_timer_timeout():
 	
@@ -57,7 +52,16 @@ func _on_pause_menu_main_menu():
 func destroy_objects(group:String,function:String):
 	get_tree().call_group(group,function)
 
-func _on_player_update_health():
+func default_game():
+	$Player.player_health = 3
+	score = 0
+	
+	$HUD.update_score(score)
+	$HUD.in_game_hud(true)
+	$HUD.show_message("Get Ready")
+	$ObstacleTimer.start()
+
+func _on_player_update_score():
 	# Updating total score
 	score += 1
 	$HUD.update_score(score)

@@ -8,7 +8,8 @@ var screen_size
 
 var player_health = 3
 
-signal updateHealth
+signal update_health
+signal update_score
 signal game_over
 
 func _ready():
@@ -42,7 +43,7 @@ func _process(delta):
 func _on_body_entered(body):
 	# Collect items
 	body.queue_free()
-	updateHealth.emit()
+	update_score.emit()
 	
 	$"SFX Player".stream = collect_leaves
 	$"SFX Player".play()
