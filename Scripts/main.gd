@@ -6,7 +6,12 @@ var score = 0
 
 func new_game():
 	default_game()
-
+	
+func _on_hud_start_game():
+	new_game()
+	$PauseMenu.can_pause_game = true
+	$Player.modulate.a8 = 255
+	
 func _on_obstacle_timer_timeout():
 	
 	# New instance of the Obstacle scene
@@ -24,10 +29,10 @@ func _on_obstacle_timer_timeout():
 	
 	obstacle.damage_player.connect($Player.update_player_health.bind())
 
-func _on_hud_start_game():
-	new_game()
-	$PauseMenu.can_pause_game = true
-	$Player.modulate.a8 = 255
+func _on_player_update_score():
+	# Updating total score
+	score += 1
+	$HUD.update_score(score)
 
 func _on_player_game_over():
 	# Stop the game
@@ -49,9 +54,6 @@ func _on_pause_menu_main_menu():
 	# to prevent Game Over message from displaying more than once
 	destroy_objects("garbage", "queue_free")
 
-func destroy_objects(group:String,function:String):
-	get_tree().call_group(group,function)
-
 func default_game():
 	$Player.player_health = 3
 	score = 0
@@ -60,8 +62,6 @@ func default_game():
 	$HUD.in_game_hud(true)
 	$HUD.show_message("Get Ready")
 	$ObstacleTimer.start()
-
-func _on_player_update_score():
-	# Updating total score
-	score += 1
-	$HUD.update_score(score)
+	
+func destroy_objects(group:String,function:String):
+	get_tree().call_group(group,function)
