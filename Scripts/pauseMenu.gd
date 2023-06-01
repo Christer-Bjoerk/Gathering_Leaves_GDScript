@@ -22,7 +22,6 @@ func _on_pause_button_pressed():
 	visible = is_game_paused
 	get_tree().paused = is_game_paused
 
-
 func _on_main_menu_button_pressed():
 	main_menu.emit()
 	is_game_paused = false

@@ -47,6 +47,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="StartMenu" type="ColorRect" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -80,7 +81,7 @@ layout_mode = 2
 [node name="Title" type="Label" parent="StartMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_rw7wq")
-theme_override_colors/font_color = Color(0.854494, 0.454924, 0.166397, 1)
+theme_override_colors/font_color = Color(0.854902, 0.454902, 0.164706, 1)
 theme_override_font_sizes/font_size = 64
 text = "Gathering Leaves"
 horizontal_alignment = 1
@@ -198,7 +199,6 @@ theme_override_font_sizes/font_size = 20
 text = "Return"
 
 [node name="SettingsMenu" type="ColorRect" parent="."]
-visible = false
 custom_minimum_size = Vector2(960, 500)
 anchors_preset = 8
 anchor_left = 0.5

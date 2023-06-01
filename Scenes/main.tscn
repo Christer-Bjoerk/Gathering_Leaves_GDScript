@@ -37,7 +37,6 @@ wait_time = 2.0
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("5_yennm")]
 
-[connection signal="game_mode" from="PauseMenu" to="." method="_on_pause_menu_game_mode"]
 [connection signal="main_menu" from="PauseMenu" to="." method="_on_pause_menu_main_menu"]
 [connection signal="game_over" from="Player" to="." method="_on_player_game_over"]
 [connection signal="update_score" from="Player" to="." method="_on_player_update_score"]
